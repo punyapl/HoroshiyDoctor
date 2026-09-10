@@ -1,0 +1,235 @@
+/**
+ * Глобальные стили для версии для слабовидящих
+ * Применяются через data-атрибуты на корневом элементе
+ * Соответствует ГОСТ Р 52872-2019
+ */
+
+html[data-accessibility='enabled'] {
+  scroll-behavior: smooth;
+
+  // Размер шрифта
+  // &[data-font-size='small'] {
+  //   font-size: 100%;
+  // }
+
+  &[data-font-size='medium'] {
+    font-size: 150%;
+  }
+
+  &[data-font-size='large'] {
+    font-size: 200%;
+  }
+
+  &[data-letter-spacing='normal'] {
+    p, h1, h2, h3, h4, h5, h6, span, a, li, td, th, label {
+      letter-spacing: normal !important;
+    }
+  }
+
+  &[data-letter-spacing='medium'] {
+    p, h1, h2, h3, h4, h5, h6, span, a, li, td, th, label {
+      letter-spacing: 0.05em !important;
+    }
+  }
+
+  &[data-letter-spacing='large'] {
+    p, h1, h2, h3, h4, h5, h6, span, a, li, td, th, label {
+      letter-spacing: 0.1em !important;
+    }
+  }
+
+  // &[data-line-spacing='normal'] {
+  //   p, h1, h2, h3, h4, h5, h6, li, td, th {
+  //     line-height: 1.25 !important;
+  //   }
+  // }
+
+  &[data-line-spacing='medium'] {
+    p, h1, h2, h3, h4, h5, h6, li, td, th {
+      line-height: 1.5 !important;
+    }
+  }
+
+  &[data-line-spacing='large'] {
+    p, h1, h2, h3, h4, h5, h6, li, td, th {
+      line-height: 2 !important;
+    }
+  }
+
+  &[data-color-scheme='black-on-white'] {
+    background-color: white !important;
+    color: black !important;
+
+    div, section, article, aside, main, header, footer, nav {
+      background-color: white !important;
+      color: black !important;
+      border-color: #ccc !important;
+      background-image: none !important;
+    }
+
+    p, h1, h2, h3, h4, h5, h6, span, li, td, th, label {
+      color: black !important;
+    }
+
+    a {
+      color: #0000ff !important;
+      text-decoration: underline !important;
+    }
+
+    button, input[type="button"], input[type="submit"] {
+      background-color: #f0f0f0 !important;
+      background-image: none !important;
+      color: black !important;
+      border: 2px solid black !important;
+
+      &:hover {
+        background-color: #e0e0e0 !important;
+      }
+    }
+
+    input, textarea, select {
+      background-color: white !important;
+      color: black !important;
+      border: 2px solid black !important;
+    }
+  }
+
+  &[data-color-scheme='white-on-black'] {
+    background-color: black !important;
+    color: white !important;
+
+    div, section, article, aside, main, header, footer, nav {
+      background-color: black !important;
+      color: white !important;
+      border-color: #666 !important;
+      background-image: none !important;
+    }
+
+    p, h1, h2, h3, h4, h5, h6, span, li, td, th, label {
+      color: white !important;
+    }
+
+    a {
+      color: #4da6ff !important;
+      text-decoration: underline !important;
+    }
+
+    button, input[type="button"], input[type="submit"] {
+      background-color: #2a2a2a !important;
+      background-image: none !important;
+      color: white !important;
+      border: 2px solid white !important;
+
+      &:hover {
+        background-color: #3a3a3a !important;
+      }
+    }
+
+    input, textarea, select {
+      background-color: #1a1a1a !important;
+      color: white !important;
+      border: 2px solid white !important;
+    }
+  }
+
+  &[data-color-scheme='blue-on-cyan'] {
+    background-color: #9dd1ff !important;
+    color: #063462 !important;
+
+    div, section, article, aside, main, header, footer, nav {
+      background-color: #9dd1ff !important;
+      color: #063462 !important;
+      border-color: #063462 !important;
+      background-image: none !important;
+    }
+
+    p, h1, h2, h3, h4, h5, h6, span, li, td, th, label {
+      color: #063462 !important;
+    }
+
+    a {
+      color: #003d82 !important;
+      text-decoration: underline !important;
+      font-weight: 600 !important;
+    }
+
+    button, input[type="button"], input[type="submit"] {
+      background-color: #7bb8ea !important;
+      background-image: none !important;
+      color: #063462 !important;
+      border: 2px solid #063462 !important;
+
+      &:hover {
+        background-color: #5aa3d9 !important;
+      }
+    }
+
+    input, textarea, select {
+      background-color: #cce5ff !important;
+      color: #063462 !important;
+      border: 2px solid #063462 !important;
+    }
+  }
+
+  // Отключение изображений
+  &[data-images='disabled'] {
+    img:not([role='presentation']) {
+      opacity: 0.3;
+      filter: grayscale(100%);
+    }
+
+    img[alt]:not([alt=''])::after {
+      content: ' [' attr(alt) ']';
+      display: block;
+      font-size: 0.875rem;
+      color: currentColor;
+      margin-top: 0.25rem;
+    }
+
+    img[alt=''],
+    img[role='presentation'] {
+      display: none;
+    }
+
+    * {
+      background-image: none !important;
+    }
+  }
+
+  // Фокус для клавиатурной навигации
+  *:focus {
+    outline: 3px solid #3b82f6 !important;
+    outline-offset: 2px !important;
+  }
+
+  // Убираем анимации
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  // Читаемый шрифт
+  body, p, h1, h2, h3, h4, h5, h6, span, a, li, td, th, label, input, button, textarea, select {
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif !important;
+  }
+}
+
+// Адаптация карт
+html[data-accessibility='enabled'] {
+  .gm-style,
+  [class*='ymaps'],
+  [class*='map'] {
+    filter: grayscale(30%) contrast(1.2);
+  }
+}
+
+@media (max-width: 768px) {
+  html[data-accessibility='enabled'] {
+    &[data-font-size='large'] {
+      font-size: 175%;
+    }
+  }
+}

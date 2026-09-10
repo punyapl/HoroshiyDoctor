@@ -1,0 +1,1 @@
+export {InsurancePageAsync as InsurancePage, } from './ui/InsurancePage.async'

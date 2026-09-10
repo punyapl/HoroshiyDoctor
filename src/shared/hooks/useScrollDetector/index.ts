@@ -1,0 +1,1 @@
+export { useScrollDetector, } from './useScrollDetector'

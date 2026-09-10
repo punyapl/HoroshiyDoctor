@@ -1,0 +1,1 @@
+export { LegalInfoPageAsync as LegalInfoPage, } from './ui/LegalInfoPage.async'

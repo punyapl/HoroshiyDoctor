@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+@custom-variant hover (&:hover);
+
+@theme {
+    --color-primary: #FF8636;
+    --color-primary-light: #FFF0E7;
+    --color-background: #ffffff;
+    --color-grad-start: #FFA07A;
+    --color-border: #E5E5E5;
+    --color-text-primary: #FF8636;
+    --color-text-main: #4D4D4D;
+    --color-text-secondary: #6B7280;
+    --color-text-white: #FFFFFF;
+    --color-button-hvr: #FF6C0B;
+}
+
+@layer components {
+    .font-h1 {
+        @apply font-medium text-[64px] leading-none;
+    }
+    @media (max-width: 768px) {
+        .font-h1 { @apply text-[32px]; }
+    }
+
+    .font-h2 {
+        @apply font-bold text-[46px] leading-none;
+    }
+    @media (max-width: 768px) {
+        .font-h2 { @apply text-[28px]; }
+    }
+
+    .font-h3 {
+        @apply font-bold text-[40px] leading-none;
+    }
+    @media (max-width: 768px) {
+        .font-h3 { @apply text-[24px]; }
+    }
+
+    .font-h4 {
+        @apply font-bold text-[32px] leading-none;
+    }
+    @media (max-width: 768px) {
+        .font-h4 { @apply text-xl; }
+    }
+
+    .font-h5 {
+        @apply font-bold text-[28px] leading-none;
+    }
+    @media (max-width: 768px) {
+        .font-h5 { @apply text-lg; }
+    }
+
+    .font-h6 {
+        @apply font-bold text-[22px] leading-none;
+    }
+    @media (max-width: 768px) {
+        .font-h6 { @apply text-base; }
+    }
+
+    .font-sub {
+        @apply font-normal text-2xl leading-tight;
+    }
+    @media (max-width: 768px) {
+        .font-sub { @apply text-sm; }
+    }
+
+    .font-p-xl {
+        @apply font-normal text-xl leading-tight;
+    }
+    @media (max-width: 768px) {
+        .font-p-xl { @apply text-lg; }
+    }
+
+    .font-p-lg {
+        @apply font-normal text-lg leading-tight;
+    }
+    @media (max-width: 768px) {
+        .font-p-lg { @apply text-base; }
+    }
+
+    .font-p-md {
+        @apply font-normal text-base leading-tight;
+    }
+    @media (max-width: 768px) {
+        .font-p-md { @apply text-sm; }
+    }
+
+    .font-p-sm {
+        @apply font-normal text-sm leading-tight;
+    }
+    @media (max-width: 768px) {
+        .font-p-sm { @apply text-[13px]; }
+    }
+
+    .font-p-xs {
+        @apply font-normal text-[13px] leading-tight;
+    }
+
+    .font-btn-lg {
+        @apply font-medium text-[24px] leading-none;
+    }
+
+    .font-btn-md {
+        @apply font-medium text-xl leading-none;
+    }
+
+    .font-btn-sm {
+        @apply font-medium text-lg leading-none;
+    }
+
+    .carousel__dot {
+        @apply w-3 h-3 rounded-full bg-border max-md:w-2 max-md:h-2;
+    }
+
+        .carousel__dot--selected {
+        @apply bg-primary/100;
+    }
+}
+
+@layer utilities {
+    .scrollbar-primary::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+    }
+    .scrollbar-primary::-webkit-scrollbar-track {
+        border-radius: 4px;
+        background-color: var(--color-background);
+    }
+    .scrollbar-primary::-webkit-scrollbar-track:active {
+        background-color: var(--color-background);
+    }
+    .scrollbar-primary::-webkit-scrollbar-thumb {
+        border-radius: 8px;
+        background-color: var(--color-primary);
+    }
+    .scrollbar-primary::-webkit-scrollbar-thumb:active {
+        background-color: var(--color-primary);
+    }
+
+    .bg-banner {
+        background-image: linear-gradient(0deg, 
+            rgba(255, 255, 255, 0.7) 0%,
+            rgba(255, 255, 255, 1) 30%, 
+            rgba(255, 255, 255, 1) 70%, 
+            rgba(255, 255, 255, 0.7) 100%
+        );
+    }
+}

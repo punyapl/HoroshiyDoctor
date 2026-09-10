@@ -1,0 +1,1 @@
+export { DoctorsPageAsync as DoctorsPage, } from './ui/DoctorsPage.async'

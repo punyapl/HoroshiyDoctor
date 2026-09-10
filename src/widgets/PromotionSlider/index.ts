@@ -1,0 +1,1 @@
+export { PromotionSlider, } from './ui/PromotionSlider'

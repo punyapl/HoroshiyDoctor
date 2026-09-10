@@ -1,0 +1,59 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /search?
+Disallow: /*?utm_*
+Disallow: /*?ref=*
+Crawl-delay: 1
+
+# Разрешаем индексацию изображений
+Allow: /images/
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.webp$
+Allow: /*.svg$
+
+# Разрешаем CSS и JS для правильного рендеринга
+Allow: /css/
+Allow: /js/
+Allow: /*.css$
+Allow: /*.js$
+
+# Яндекс
+User-agent: Yandex
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+Clean-param: utm_source&utm_medium&utm_campaign&ref
+
+# Google
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+
+# Googlebot для изображений
+User-agent: Googlebot-Image
+Allow: /images/
+
+# Блокируем плохих ботов
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Карта сайта
+Sitemap: https://horoshiydoctor-nsk.ru/sitemap.xml
